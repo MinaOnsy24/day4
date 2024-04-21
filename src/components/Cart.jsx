@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import Navbar from './Navbar'
 import { useDispatch, useSelector } from 'react-redux'
 import { addProducts, removeSpecificProduct, removProducts } from '../store/Slices/Cart';
-import './cart.css';
 
 export default function Cart() {
   const cart = useSelector(state => state.Cart)

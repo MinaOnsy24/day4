@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 export default function Navbar() {
+    const  [inputValue, setInputValue] =  useState('');
+
+    const  hihihi = (event) => {
+		setInputValue(event.target.value);
+	};
+
+
+
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -19,11 +28,11 @@ export default function Navbar() {
                                 <Link className="nav-link" to="/cart">cart</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/login">login</Link>
+                                <Link className="nav-link" to="/context">context {inputValue}</Link>
                             </li>
                         </ul>
                         <form className="d-flex" role="search">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                            <input className="form-control me-2" type="search" onChange={hihihi} />
                             <button className="btn btn-outline-success" type="submit">Search</button>
                         </form>
                     </div>
